@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+        /// Declare the variables
+        int amount, originalChange, change, quarters, dimes,
+            nickels, pennies, dollars, halfDollars;
+
+        /// Prompt the user to enter the price
+        cout << "Enter the price of the item in cents" << endl;
+        cout <<"(from 25 cents to a dollar, in 5-cent increments): ";
+
+        /// Read the price
+        cin >> amount;
+
+        /// Calculate the change
+        originalChange = 100 - amount;
+        change = originalChange;
+
+        ///Compute the number of dollars and remaining change
+        dollars = change / 100; //calculate amount of dollars
+        change = change % 100; //calculate remaining change
+
+        ///Compute the number of half-dollars and remaining change
+        halfDollars = change / 50; //calculate amount of half-dollars
+        change = change % 50; //calculate remaining change
+
+        ///Compute the number of quarters and remaining change
+        quarters = change / 25;  //calculate amount of quarters
+        change = change % 25; //calculate remaining change
+
+        ///Compute the number of dimes and remaining change
+        dimes = change / 10; //calculate amount of dimes
+        change = change % 10; //calculate remaining change
+
+        ///Compute the number of nickels, pennies and remaining change
+        nickels = change / 5; //calculate amount of nickels
+        change = change % 5; //calculate remaining change
+
+        pennies = change; //calculate amount of pennies
+
+
+        /// Print the output to the screen
+        cout<< endl<< "******************************************************" << endl;
+        cout<< "Your change is " << originalChange <<
+                " cents" << endl << endl;
+        cout << "You will get the following change: " << endl;
+        cout << dollars << " dollars" << endl;
+        cout << halfDollars << " half Dollars" << endl;
+        cout << quarters << " quarters" << endl;
+        cout << dimes << " dimes" << endl;
+        cout << nickels << " nickels and" << endl;
+        cout << pennies << " pennies"<< endl;
+
+    return 0;
+}
